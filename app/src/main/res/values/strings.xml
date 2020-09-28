@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EMS tracker</string>
+    <string name="search_text">EMS tracking number</string>
+    <string name="search_btn_text">Search</string>
+    <string name="default_results">Nothing was found for the given EMS ID</string>
+    <string name="default_placeholder">DEFAULT PLACEHOLDER</string>
+</resources>
