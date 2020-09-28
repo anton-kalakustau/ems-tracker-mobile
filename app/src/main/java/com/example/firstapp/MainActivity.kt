@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     fun search(view: View) {
         val emsInputComponent = findViewById<EditText>(R.id.emsIdTxt);
-        val emsId = "EG688165502JP";// emsInputComponent.text.toString();
+        val emsId = emsInputComponent.text.toString(); //EG688165502JP
         val apiCallResult =  DataFetcher().execute(emsId).get();
 
         if (DbHandler.db == null) {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 .show();
         }
 
-        val dbItem = DbHandler.GetByIdExecutor().execute(emsId).get(); // DbHandler.db?.emsDao()?.findByEmsId(emsId);
+        val dbItem = DbHandler.GetByIdExecutor().execute(emsId).get();
         if (dbItem == null) {
             DbHandler.InsertExecutor().execute(SearchHistoryItem(emsId, DateTimeFormatter.ISO_INSTANT.format(
                Instant.now()), apiCallResult.size.toString()));
